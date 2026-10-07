@@ -18,7 +18,7 @@ export default function NotFound() {
           <p>The page you were looking for isn’t here, but the Marina still is.</p>
           <div className="hero-actions">
             <Link href="/" className="button button-gold">Back to home <ArrowUpRight size={17} /></Link>
-            <Link href="/cruises" className="button button-ghost">See the cruises</Link>
+            <Link href="/cruises" className="button button-secondary">See the cruises</Link>
           </div>
         </div>
       </main>

@@ -19,6 +19,18 @@ export const site = {
   founded: 2022,
 } as const;
 
+/**
+ * Google reviews badge.
+ * Fill in `rating` and `count` with the live figures from the Google Business Profile
+ * to show stars + numbers. Leave them null and the badge shows a "Read our Google reviews" link
+ * (never display a rating that isn't real).
+ */
+export const googleReviews: { rating: number | null; count: number | null; url: string } = {
+  rating: null,
+  count: null,
+  url: "https://www.google.com/maps/search/?api=1&query=Alishba+Dhow+Cruise+Dubai+Marina",
+};
+
 export type CruiseKey = "Costa" | "Royale";
 
 export const cruises: Record<CruiseKey, {

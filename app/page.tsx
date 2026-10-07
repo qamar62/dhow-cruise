@@ -4,6 +4,7 @@ import { ArrowDown, ArrowRight, ArrowUpRight, Check, Clock3, MapPin, Sparkles, S
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Reveal } from "@/components/Reveal";
+import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { cruises, faqs, site, waLink, type CruiseKey } from "@/lib/site";
 
 const inclusions = ["Two-hour Marina cruise", "International buffet dinner", "Live entertainment", "Upper and lower deck choices"];
@@ -67,6 +68,7 @@ export default function Home() {
               <Link href="/book" className="button button-gold">Reserve your table <ArrowUpRight size={17} /></Link>
               <Link href="/cruises" className="button button-ghost">Compare the cruises</Link>
             </div>
+            <div className="hero-proof"><GoogleReviewsBadge /></div>
           </div>
           <div className="hero-meta">
             <div><Clock3 size={17} /><span><small>Regular sailing</small>{site.sailing}</span></div>
@@ -168,7 +170,7 @@ export default function Home() {
 
         <section className="section faq-section" aria-labelledby="faq-title">
           <div className="container faq-grid">
-            <Reveal className="faq-intro"><p className="eyebrow">Good to know</p><h2 id="faq-title">Questions,<br /><em>answered.</em></h2><p>Still unsure? Message us on WhatsApp—our team replies daily.</p><a className="text-link" href={waLink("Hello Alishba Cruises, I have a question about the cruise.")} target="_blank" rel="noopener noreferrer">Ask on WhatsApp <ArrowUpRight size={15} /></a></Reveal>
+            <Reveal className="faq-intro"><p className="eyebrow">Good to know</p><h2 id="faq-title">Questions,<br /><em>answered.</em></h2><p>Still unsure? Message us on WhatsApp—our team replies daily.</p><a className="text-link" href={waLink("Hello Alishba Cruises, I have a question about the cruise.")} target="_blank" rel="noopener noreferrer">Ask on WhatsApp <ArrowUpRight size={15} /></a><div className="faq-proof"><GoogleReviewsBadge variant="card" /></div></Reveal>
             <div className="faq-list">
               {faqs.map((f, i) => (
                 <details key={f.q} className="faq-item" open={i === 0}>

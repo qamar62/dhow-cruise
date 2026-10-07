@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 import { WhatsAppIcon } from "./WhatsAppButton";
+import { GoogleReviewsBadge } from "./GoogleReviewsBadge";
 import { site, waLink } from "@/lib/site";
 
 export function Footer() {
@@ -13,6 +14,7 @@ export function Footer() {
           <Logo />
           <p>Two distinct Dubai Marina dinner cruises—relaxed Costa and premium Royale—hosted by Alishba Cruises since {site.founded}.</p>
           <Link href="/book" className="text-link">Reserve your evening <ArrowUpRight size={16} /></Link>
+          <div className="footer-proof"><GoogleReviewsBadge variant="card" /></div>
         </div>
         <div>
           <p className="footer-label">Explore</p>

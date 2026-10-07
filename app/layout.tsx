@@ -3,7 +3,8 @@ import "@fontsource-variable/inter";
 import "@fontsource-variable/eb-garamond";
 import "@fontsource-variable/eb-garamond/wght-italic.css";
 import "./globals.css";
-import { WhatsAppFab } from "@/components/WhatsAppFab";
+import { ChatWidget } from "@/components/chat/ChatWidget";
+import { themeInitScript } from "@/lib/theme";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -25,15 +26,18 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#071a22" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#fbf8f1" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-AE">
+    <html lang="en-AE" data-theme="light" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
         <a href="#main" className="skip-link">Skip to content</a>
         {children}
-        <WhatsAppFab />
+        <ChatWidget />
       </body>
     </html>
   );

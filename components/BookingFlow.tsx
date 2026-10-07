@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Check, CheckCircle2, Info, Minus, Plus, ShieldCh
 import Link from "next/link";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { WhatsAppIcon } from "./WhatsAppButton";
+import { GoogleReviewsBadge } from "./GoogleReviewsBadge";
 import { cruises, site, waLink, type CruiseKey } from "@/lib/site";
 
 type Guests = { adults: number; children: number };
@@ -99,6 +100,7 @@ export function BookingFlow({ initialCruise = "Costa" }: { initialCruise?: Cruis
         <h1>Choose your<br /><em>Marina evening.</em></h1>
         <p>Relaxed Costa or premium Royale. Pick your cruise, date, seating and guests—then send the request straight to our team on WhatsApp.</p>
         <div className="booking-assurance"><ShieldCheck /><span><strong>No payment taken online</strong><small>Costa from AED {cruises.Costa.adult} · Royale from AED {cruises.Royale.adult} · confirmed by our team</small></span></div>
+        <div className="booking-proof"><GoogleReviewsBadge variant="card" /></div>
       </div>
 
       <form className="booking-form" onSubmit={submit} noValidate={false}>

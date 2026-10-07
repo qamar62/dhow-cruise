@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
+import { ThemeToggle } from "./ThemeToggle";
 import { site } from "@/lib/site";
 
 const links = [
@@ -46,7 +47,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
   }, [open]);
 
   return (
-    <header className={`site-header ${overlay ? "is-overlay" : ""} ${scrolled ? "is-scrolled" : ""}`}>
+    <header className={`site-header ${overlay ? "is-overlay" : ""} ${scrolled ? "is-scrolled" : ""} ${open ? "menu-open" : ""}`}>
       <div className="nav-shell">
         <Logo priority />
         <nav id="main-nav" className={`main-nav ${open ? "is-open" : ""}`} aria-label="Main navigation">
@@ -60,9 +61,12 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
             Book now
           </Link>
         </nav>
-        <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="main-nav" aria-label={open ? "Close menu" : "Open menu"}>
-          {open ? <X /> : <Menu />}
-        </button>
+        <div className="header-tools">
+          <ThemeToggle />
+          <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="main-nav" aria-label={open ? "Close menu" : "Open menu"}>
+            {open ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
     </header>
   );
